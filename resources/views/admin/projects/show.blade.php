@@ -9,6 +9,13 @@
             <h3>{{ $project->created_at }}</h3>
             <p>{{ $project->slug }}</p>
         </div>
+        <div class="">
+            @forelse ($project->technologies as $technology)
+                <span>Tecnologia/e usata/e{{ $technology->name }}</span>
+            @empty
+                <span>Nessuna tecnologia dichiarata </span>
+            @endforelse
+        </div>
         <div class="text-center">
             @if ($project->cover_image)
                 <img class="w-50 mt-4 mb-4" src="{{ asset('storage/' . $project->cover_image) }}" alt="">

@@ -16,6 +16,18 @@
                             value="{{ old('title', $project->title) }}">
                     </div>
 
+                    <div class="form-group mb-3">
+                        <h4>Tecnologie Usate</h4>
+                        @foreach ($technologies as $technology)
+                            <div class="form-check">
+                                <input type="checkbox" name="technologies[]" id="tag-{{ $technology->id }}"
+                                    class="form-check-input" value="{{ $technology->id }}" @checked($project->contains)>
+                                <label for="tag-{{ $technology->id }}"
+                                    class="form-check-label">{{ $technology->name }}</label>
+                            </div>
+                        @endforeach
+                    </div>
+
                     <div class="form-group mb-3 mt-3">
                         <label for="type">Tipologia Progetto</label>
                         <select name="type_id" id="type" class="form-select">
