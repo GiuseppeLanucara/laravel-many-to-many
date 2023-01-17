@@ -115,6 +115,8 @@ class ProjectController extends Controller
         return redirect()->route('admin.projects.index')->with('message', "$project->title è stato modificato");
     }
 
+
+
     /**
      * Remove the specified resource from storage.
      *
